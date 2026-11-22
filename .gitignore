@@ -1,0 +1,21 @@
+# Secrets and local environment
+.env
+.streamlit/secrets.toml
+.venv/
+__pycache__/
+*.pyc
+
+# Local SQLite database (demo history)
+*.db
+*.db-journal
+
+# sample_data/ IS committed: the hosted demo seeds its reference tables from
+# sample_data/seed_db_records.json (SEED_FILE) and reviewers download the test PDFs.
+# The app never reads anything else in it.
+
+.DS_Store
+
+#.md files
+DEPLOYMENT.md
+HANDOFF.md
+WHAT_WAS_BUILT.md

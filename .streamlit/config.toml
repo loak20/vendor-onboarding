@@ -1,0 +1,14 @@
+# Streamlit settings for local runs and Streamlit Community Cloud.
+
+[server]
+# The app enforces its own 10 MB-per-document rule (reported as DOCUMENT_UNREADABLE).
+# This is only an outer bound, so very large files never reach the server.
+maxUploadSize = 25
+
+[client]
+# Visitors to the public app see only the exception type, never a full traceback.
+# Full details still go to the server log ("Manage app" → logs on Community Cloud).
+showErrorDetails = "type"
+
+[browser]
+gatherUsageStats = false

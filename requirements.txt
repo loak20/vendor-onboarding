@@ -1,0 +1,8 @@
+# App runtime only. The test-data generator's extras (reportlab, Pillow) are
+# installed separately: pip install reportlab Pillow pymupdf
+streamlit>=1.37,<2
+pymupdf>=1.24.3
+google-genai>=1.0
+python-dotenv>=1.0
+# PostgreSQL driver + connection pool, used only when DATABASE_URL is set (hosted demo)
+psycopg[binary,pool]>=3.2

@@ -1,0 +1,118 @@
+[
+  {
+    "vendor_id": "01",
+    "vendor_name": "Kovai Precision Components Pvt Ltd",
+    "folder": "vendor_01_kovai_precision",
+    "scenario_description": "Happy path: consistent form and digital GST, PAN and bank PDFs",
+    "expected_outcome": "APPROVED",
+    "expected_validation_failures": [],
+    "documents": {
+      "gst_certificate": "gst_certificate.pdf",
+      "pan_document": "pan_card.pdf",
+      "bank_proof": "bank_proof.pdf"
+    }
+  },
+  {
+    "vendor_id": "02",
+    "vendor_name": "Deccan Agro Exports Ltd",
+    "folder": "vendor_02_deccan_agro",
+    "scenario_description": "Consistent submission; all three documents are scanned image-only PDFs",
+    "expected_outcome": "APPROVED",
+    "expected_validation_failures": [],
+    "documents": {
+      "gst_certificate": "gst_certificate.pdf",
+      "pan_document": "pan_card.pdf",
+      "bank_proof": "bank_proof.pdf"
+    }
+  },
+  {
+    "vendor_id": "03",
+    "vendor_name": "Apex Cloud Solutions Pvt Ltd",
+    "folder": "vendor_03_apex_cloud",
+    "scenario_description": "Bank proof account holder is an unrelated individual (Rohan Sharma)",
+    "expected_outcome": "REJECTED",
+    "expected_validation_failures": [
+      "BANK_BENEFICIARY_MISMATCH"
+    ],
+    "documents": {
+      "gst_certificate": "gst_certificate.pdf",
+      "pan_document": "pan_card.pdf",
+      "bank_proof": "bank_proof.pdf"
+    }
+  },
+  {
+    "vendor_id": "04",
+    "vendor_name": "Vanguard Logistics India Pvt Ltd",
+    "folder": "vendor_04_vanguard_logistics",
+    "scenario_description": "Form legal name differs from GST/PAN legal entity; bank holder and GST trade name match the documented entity",
+    "expected_outcome": "PENDING",
+    "expected_validation_failures": [
+      "LEGAL_NAME_MISMATCH"
+    ],
+    "documents": {
+      "gst_certificate": "gst_certificate.pdf",
+      "pan_document": "pan_card.pdf",
+      "bank_proof": "bank_proof.pdf"
+    }
+  },
+  {
+    "vendor_id": "05",
+    "vendor_name": "Narmada Polymers LLP",
+    "folder": "vendor_05_narmada_polymers",
+    "scenario_description": "GSTIN (valid checksum) embeds PAN AABFN9999K; form and PAN document show AABFN4321K",
+    "expected_outcome": "REJECTED",
+    "expected_validation_failures": [
+      "PAN_GSTIN_MISMATCH"
+    ],
+    "documents": {
+      "gst_certificate": "gst_certificate.pdf",
+      "pan_document": "pan_card.pdf",
+      "bank_proof": "bank_proof.pdf"
+    }
+  },
+  {
+    "vendor_id": "06",
+    "vendor_name": "Zenith Packaging Industries",
+    "folder": "vendor_06_zenith_packaging",
+    "scenario_description": "Electricity bill in GST certificate slot",
+    "expected_outcome": "PENDING",
+    "expected_validation_failures": [
+      "WRONG_DOCUMENT_TYPE"
+    ],
+    "documents": {
+      "gst_certificate": "Electricity_Utility_Bill.pdf",
+      "pan_document": "pan_card.pdf",
+      "bank_proof": "bank_proof.pdf"
+    }
+  },
+  {
+    "vendor_id": "07",
+    "vendor_name": "Meridian Tech Services Pvt Ltd",
+    "folder": "vendor_07_meridian_tech",
+    "scenario_description": "PAN, GSTIN, account and IFSC equal a pre-seeded approved vendor",
+    "expected_outcome": "REJECTED",
+    "expected_validation_failures": [
+      "DUPLICATE_VENDOR"
+    ],
+    "documents": {
+      "gst_certificate": "gst_certificate.pdf",
+      "pan_document": "pan_card.pdf",
+      "bank_proof": "bank_proof.pdf"
+    }
+  },
+  {
+    "vendor_id": "08",
+    "vendor_name": "Orion Global Traders",
+    "folder": "vendor_08_orion_global",
+    "scenario_description": "PAN exactly matches a seeded internal blocklist entry",
+    "expected_outcome": "REJECTED",
+    "expected_validation_failures": [
+      "BLOCKLIST_MATCH"
+    ],
+    "documents": {
+      "gst_certificate": "gst_certificate.pdf",
+      "pan_document": "pan_card.pdf",
+      "bank_proof": "bank_proof.pdf"
+    }
+  }
+]

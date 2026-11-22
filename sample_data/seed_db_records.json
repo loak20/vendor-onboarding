@@ -1,0 +1,18 @@
+{
+  "approved_vendors": [
+    {
+      "legal_name": "Meridian Technology Services Pvt Ltd",
+      "pan": "AAMCM3398E",
+      "gstin": "27AAMCM3398E1Z3",
+      "bank_account_number": "50100392847716",
+      "ifsc": "CDBL0002216"
+    }
+  ],
+  "blocklist": [
+    {
+      "legal_name": "Orion Global Traders",
+      "pan": "AAKFO8812D",
+      "reason": "Internal onboarding policy restriction — synthetic compliance test"
+    }
+  ]
+}
